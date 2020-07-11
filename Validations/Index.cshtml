@@ -1,0 +1,41 @@
+
+@model ViewToController.Models.Employee
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div>
+
+
+
+        <section>
+
+            <h1>
+                Pass Data using Binding <h1>
+
+                <!-- It is strongly binding -->
+    @using (Html.BeginForm("Submitdata", "Home", FormMethod.Post))
+    {
+        @Html.TextBoxFor(x => x.firstname) <br />
+        @Html.ValidationMessageFor("firstname")<br />
+        @Html.TextBoxFor(x => x.lastname) <br />
+        @Html.ValidationMessageFor("lastname")<br />
+
+        @Html.TextBoxFor(x => x.email) <br />
+        @Html.ValidationMessageFor("email")<br />
+        @Html.TextBoxFor(x => x.age) <br />
+        @Html.ValidationMessageFor("age")<br />
+        <input type="submit" value="Click me" />
+    }
+</section>
+    </div>
+</body>
+</html>
+
+<!-- For loosly binding  -->
+        @Html.TextBox("firstname") <br />
+        @Html.ValidationMessage("firstname")<br />
